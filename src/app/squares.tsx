@@ -40,7 +40,7 @@ const stylesSquares = `.squares {
   filter: blur(0px) sepia(.3);
 }`;
 
-export default function Squares({parent}:AppProps) {
+export default function Squares({ parent }: AppProps) {
   const squaresGrid = useRef(document.createElement("div"))
   const [isLoaded, setIsLoaded] = useState(false);
   const [isPageLoaded, setIsPageLoaded] = useState(false);
@@ -61,7 +61,7 @@ export default function Squares({parent}:AppProps) {
     });
   }, [isLoaded]);
 
-  
+
 
   function createGrid(size: any) {
     size = window.innerWidth < 700 ? (size / 2) : size; //for tablet & mobile
