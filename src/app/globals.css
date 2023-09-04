@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', cursive;
+  color: #333332;
+  height: 100vh;
+  font-size: clamp(1rem, 10vw, 1.3rem);
+}
