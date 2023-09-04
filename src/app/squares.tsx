@@ -1,7 +1,13 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react'
-
 import ReactShadowRoot from 'react-shadow-root';
+
+interface AppProps {
+  squaresGrid?: HTMLElement | null;
+  parent?: string;
+}
+
+
 const stylesSquares = `.squares {
   position: fixed;
   overflow: hidden;
@@ -34,8 +40,8 @@ const stylesSquares = `.squares {
   filter: blur(0px) sepia(.3);
 }`;
 
-export default function Squares() {
-
+export default function Squares({parent}:AppProps) {
+  const squaresGrid = useRef(document.createElement("div"))
   const [isLoaded, setIsLoaded] = useState(false);
   const [isPageLoaded, setIsPageLoaded] = useState(false);
 
@@ -55,7 +61,7 @@ export default function Squares() {
     });
   }, [isLoaded]);
 
-  const squaresGrid = useRef();
+  
 
   function createGrid(size: any) {
     size = window.innerWidth < 700 ? (size / 2) : size; //for tablet & mobile
@@ -102,15 +108,14 @@ export default function Squares() {
   }
 
   return (
-    <component-squares>
+    <div>
       <ReactShadowRoot>
         <style>{stylesSquares}</style>
         <div className='squares'>
-
           <div ref={squaresGrid} className='squares__grid'>
           </div>
         </div>
       </ReactShadowRoot>
-    </component-squares>
+    </div>
   );
 }

@@ -48,7 +48,7 @@ export default function Home() {
       <Squares />
       <main className='container'>
         <Logo />
-        <p>I'm Roger Taylor, I have been working in the web industry since 2002 as a designer and frontend developer.</p>
+        <p>I&apos;m Roger Taylor, I have been working in the web industry since 2002 as a designer and frontend developer.</p>
         <p>Here is a list of some of the projects I have worked on, past and present.</p>
         <hr />
         <p><strong>Recent roles:</strong></p>
