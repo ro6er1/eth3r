@@ -35,26 +35,33 @@ const stylesSquares = `.squares {
 }`;
 
 export default function Squares() {
-  
+
   const [isLoaded, setIsLoaded] = useState(false);
   const [isPageLoaded, setIsPageLoaded] = useState(false);
-  
+
   useEffect(() => {
     setIsLoaded(true);
     if (isLoaded) {
       setIsPageLoaded(true);
       createGrid(200);
     }
+    window.addEventListener("resize", () => {
+      let i = squaresGrid.current.childElementCount;
+      let divs = squaresGrid.current.children;
+      while (i--) {
+        divs[i].remove()
+      }
+      createGrid(200);
+    });
   }, [isLoaded]);
-  
+
   const squaresGrid = useRef();
-  const square = useRef();
 
   function createGrid(size: any) {
     size = window.innerWidth < 700 ? (size / 2) : size; //for tablet & mobile
     let ratioW = Math.floor((window.innerWidth || document.documentElement.offsetWidth) / size),
-    ratioH = Math.floor((window.innerHeight || document.documentElement.offsetHeight) / size);
-    
+      ratioH = Math.floor((window.innerHeight || document.documentElement.offsetHeight) / size);
+
     const parent = squaresGrid.current;
 
     parent.style.width = (ratioW * size) + 'px';
@@ -77,11 +84,11 @@ export default function Squares() {
       }
     }
 
-    // randomlyAnimate();
+    randomlyAnimate();
   }
 
   function randomlyAnimate() {
-    setInterval(function() {   
+    setInterval(function () {
       let i = squaresGrid.current.childElementCount;
       let divs = squaresGrid.current.children;
       while (i--) {
@@ -93,7 +100,7 @@ export default function Squares() {
       }
     }, 2000);
   }
-  
+
   return (
     <component-squares>
       <ReactShadowRoot>
