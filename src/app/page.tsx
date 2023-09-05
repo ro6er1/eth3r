@@ -98,8 +98,7 @@ export default function Home() {
         </p>
         
 
-        <sup><i>This small site was made using NextJs and Web ComponentsL <a href="https://github.com/ro6er1/eth3r" target="_blank">https://github.com/ro6er1/eth3r</a></i></sup>
-        <sup><i>Codepen for a JS version of the animated background: <a href="https://codepen.io/ro6er/pen/xxQPvwY" target="_blank">https://codepen.io/ro6er/pen/xxQPvwY</a></i></sup>
+        <sup><i>This small site was made using NextJs and Web Components: Git repo: <a href="https://github.com/ro6er1/eth3r" target="_blank">https://github.com/ro6er1/eth3r</a></i></sup>
       </main>
     </ReactShadowRoot>
   )
