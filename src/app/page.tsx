@@ -22,7 +22,7 @@ p {
 }
 
 h1 {
-  font-size: clamp(1rem, 10vw, 3rem);
+  font-size: clamp(1rem, 10vw, 1.3rem);
 }
 
 sup {
@@ -44,11 +44,11 @@ export default function Home() {
 
   return (
     <ReactShadowRoot>
+        <h1>I&apos;m Roger Taylor, I have been working in the web industry since 2002 as a designer and frontend developer.</h1>
       <style>{stylesPage}</style>
       <Squares />
       <main className='container'>
         <Logo />
-        <p>I&apos;m Roger Taylor, I have been working in the web industry since 2002 as a designer and frontend developer.</p>
         <p>Here is a list of some of the projects I have worked on, past and present.</p>
         <hr />
         <p><strong>Recent roles:</strong></p>
